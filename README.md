@@ -1,12 +1,11 @@
 Devstack WebApp
-
+An interactive web app built with React 18, Vite, and Tailwind CSS to explore modern technologies, compare options, and build custom developer tech stacks with live feedback.
 A modern and interactive Developer Stack WebApp build with React.
 The application allows users to explore developer technologies and build their own personalized tech stack by selecting the technologies they want to use.
 
 🚀 Live Demo
 
-🔗 Live Website: 
-
+🔗 Live Website: https://silver-capybara-67135d.netlify.app/
 
 ✨ Features
 🧩 Build Your Tech Stack — Select technologies and create your own developer stack.
