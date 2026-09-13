@@ -206,24 +206,8 @@ The application renders the technology cards dynamically from this JSON data.
 
 👨‍💻 Author
 
-M Yasin
+Mohammad Yasin
 
 GitHub: bdshroud
 
 Built with ❤️ using React, TypeScript, Tailwind CSS, and Vite.
-
-
-### একটা গুরুত্বপূর্ণ correction
-
-তোমার বর্তমান README-তে `useEffect` দিয়ে JSON fetch করার example আছে, কিন্তু সেটা তোমার বর্তমান implementation-এর সাথে মেলে না। README-তে সেটা রাখলে reviewer code দেখে mismatch ধরতে পারে। GitHub-এর বর্তমান README-তে ওই `useEffect` explanation আছে। :contentReference[oaicite:1]{index=1}
-
-উপরের version-এ তাই **`use()` + `Suspense`** অনুযায়ী Q&A করেছি।
-
-আর বর্তমান README-র technology list-এ JavaScript আছে, কিন্তু তোমার actual source TypeScript—যেমন `TechnologyCard.tsx`-এ `TechnologyType` এবং TypeScript `Dispatch/SetStateAction` ব্যবহার করছ। :contentReference[oaicite:2]{index=2}
-
-**README update করার পর:** commit করবে:
-
-```bash
-git add README.md
-git commit -m "Update project README"
-git push
