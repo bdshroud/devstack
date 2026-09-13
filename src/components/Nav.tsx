@@ -42,7 +42,7 @@ const Nav = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="ml-8 hidden items-center gap-5 sm:flex">
+          <ul className="ml-8 hidden items-center gap-4 sm:flex">
             <li>
               <a
                 href="#home"
