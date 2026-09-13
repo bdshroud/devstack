@@ -12,9 +12,9 @@ const Nav = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white">
       {/* Main Navbar */}
-      <div className="flex min-h-[72px] items-center justify-between px-4 py-4 sm:container sm:mx-auto sm:max-w-[1200px]">
+      <div className="flex min-h-[72px] items-center justify-between px-4 py-4 sm:container sm:mx-auto sm:max-w-[1200px] lg:grid lg:grid-cols-[1fr_auto_1fr]">
 
-        {/* Left Side: Hamburger + Logo + Desktop Menu */}
+        {/* Left Side: Hamburger + Logo */}
         <div className="flex items-center">
 
           {/* Mobile Hamburger */}
@@ -40,58 +40,58 @@ const Nav = () => {
               className="w-[140px]"
             />
           </a>
-
-          {/* Desktop Navigation */}
-          <ul className="ml-8 hidden items-center gap-4 sm:flex">
-            <li>
-              <a
-                href="#home"
-                className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
-              >
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#technologies"
-                className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
-              >
-                Technologies
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
-              >
-                Projects
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
-              >
-                About
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#"
-                className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
         </div>
 
+        {/* Center: Desktop Navigation */}
+        <ul className="hidden items-center justify-center gap-4 lg:flex">
+          <li>
+            <a
+              href="#home"
+              className="inline-block font-medium text-[#D91B7E] transition-all duration-200 hover:-translate-y-0.5"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#technologies"
+              className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+            >
+              Technologies
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+            >
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+            >
+              About
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#"
+              className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+
         {/* Right Side: Auth Buttons */}
-        <div className="flex gap-1 sm:gap-2">
+        <div className="ml-auto flex gap-1 lg:justify-self-end sm:gap-2">
           <button
             type="button"
             className="btn rounded-full bg-white text-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 sm:text-base"
@@ -110,14 +110,14 @@ const Nav = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="border-t border-gray-100 bg-white px-4 py-4 shadow-sm sm:hidden">
+        <div className="border-t border-gray-100 bg-white px-4 py-4 shadow-sm lg:hidden">
           <ul className="flex flex-col gap-1">
 
             <li>
               <a
                 href="#home"
                 onClick={closeMenu}
-                className="block rounded-lg px-4 py-3 text-gray-500 transition-all duration-200 hover:bg-gray-50 hover:text-[#C1239B]"
+                className="block rounded-lg px-4 py-3 font-medium text-[#D91B7E] transition-all duration-200 hover:bg-gray-50"
               >
                 Home
               </a>
