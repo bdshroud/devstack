@@ -124,7 +124,7 @@
     "name": "TypeScript",
     "category": "Language",
     "description": "A strongly typed superset of JavaScript that compiles to plain JavaScript.",
-    "icon": "../src/assets/typescript.png",
+    "icon": "https://icon.icepanel.io/Technology/svg/TypeScript.svg",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Essential"
