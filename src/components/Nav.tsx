@@ -57,11 +57,11 @@ const Nav = () => {
 
         {/* Auth Buttons */}
         <div className="flex gap-1 sm:gap-2">
-          <button className="btn bg-white rounded-full text-xs sm:text-base">
+          <button className="btn rounded-full bg-white text-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 sm:text-base">
             Sign In
           </button>
 
-          <button className="btn rounded-full bg-[#D91B7E] text-xs text-white sm:text-base">
+          <button  className="btn rounded-full bg-[#D91B7E] text-xs text-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 sm:text-base">
             Sign Up
           </button>
         </div>
