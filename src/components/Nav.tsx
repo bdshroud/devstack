@@ -37,23 +37,52 @@ const Nav = () => {
         </a>
 
         {/* Desktop Menu */}
-        <ul className="hidden items-center gap-5 sm:flex">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#technologies">Technologies</a>
-          </li>
-          <li>
-            <a href="#">Projects</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
+       <ul className="hidden items-center gap-5 sm:flex">
+  <li>
+    <a
+      href="#home"
+      className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+    >
+      Home
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#technologies"
+      className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+    >
+      Technologies
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#"
+      className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+    >
+      Projects
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#"
+      className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+    >
+      About
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="#"
+      className="inline-block text-gray-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-[#C1239B]"
+    >
+      Contact
+    </a>
+  </li>
+</ul>
 
         {/* Auth Buttons */}
         <div className="flex gap-1 sm:gap-2">
