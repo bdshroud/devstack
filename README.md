@@ -1,102 +1,86 @@
-Devstack WebApp
-An interactive web app built with React 18, Vite, and Tailwind CSS to explore modern technologies, compare options, and build custom developer tech stacks with live feedback.
-A modern and interactive Developer Stack WebApp build with React.
-The application allows users to explore developer technologies and build their own personalized tech stack by selecting the technologies they want to use.
+# DevStack Builder
 
-🚀 Live Demo
+A modern and responsive web application for exploring development technologies and building a personalized technology stack.
 
-🔗 Live Website: https://silver-capybara-67135d.netlify.app/
+Users can browse available technologies, select one technology from each category, manage their selected stack, and get instant feedback through toast notifications.
 
-✨ Features
-🧩 Build Your Tech Stack — Select technologies and create your own developer stack.
-📋 Selected Stack Management — View the technologies you have selected and easily remove them when needed.
-📱 Responsive Interface — The application works smoothly across desktop, tablet, and mobile devices.
-🛠️ Technologies Used
-⚛️ React.js
-🟨 JavaScript
-🎨 CSS / Tailwind CSS
-📦 React Hooks
-🔔 React Toast
-📄 JSON Data
-🧰 Git & GitHub
-🧩 React Concepts Used
+## 🚀 Live Demo
+
+[Visit the Live Website](https://silver-capybara-67135d.netlify.app/)
+
+## ✨ Features
+
+- 🧩 **Build Your Tech Stack**  
+  Select technologies and create your own personalized development stack.
+
+- 🚫 **One Technology Per Category**  
+  Users can select only one technology from each category to keep the stack organized.
+
+- 📋 **Stack Management**  
+  View selected technologies, remove individual items, or remove the entire stack.
+
+- 🔔 **Toast Notifications**  
+  Get instant feedback when adding, removing, or selecting an already-used category.
+
+- 📱 **Responsive Design**  
+  Fully responsive interface for desktop, tablet, and mobile devices.
+
+- 🍔 **Mobile Navigation**  
+  Mobile-friendly hamburger menu with responsive navigation.
+
+- ⏳ **Loading State**  
+  Displays a loading state while technology data is being fetched.
+
+- 📄 **JSON-Based Technology Data**  
+  Technology information is loaded from a JSON file instead of being hardcoded inside components.
+
+## 🛠️ Technologies Used
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- DaisyUI
+- React Toastify
+- React Icons
+- JSON
+- Git & GitHub
+
+## ⚛️ React Concepts Used
 
 This project helped me practice:
 
-Components
-Props
-State
-useState
-useEffect
-Conditional Rendering
-.map()
-Unique key props
-Parent-to-child data passing
-Child-to-parent communication
-Event Handling
+- Components
+- Props
+- State
+- `useState`
+- `use()`
+- `Suspense`
+- Conditional Rendering
+- `.map()`
+- Unique `key` props
+- Parent-to-child data passing
+- Child-to-parent communication
+- Event handling
+- TypeScript interfaces and types
 
-React Questions & Answers
-1. What is JSX, and why is it used in React?
+## 📂 Project Structure
 
-JSX lets us write HTML-like code inside JavaScript.
-It makes React components easier to read and helps us create the UI more easily.
-<h1>DevStack Builder</h1>
+```text
+src/
+├── assets/
+├── components/
+│   ├── Banner.tsx
+│   ├── Footer.tsx
+│   ├── Nav.tsx
+│   └── Technology/
+│       ├── Technology.tsx
+│       ├── TechnologyCard.tsx
+│       └── YourStuck.tsx
+├── type/
+│   └── type.ts
+├── App.tsx
+└── index.css
 
-2. What is the difference between props and state?
-
-Props are used to pass data from a parent component to a child component.
-State is data managed inside a component that can change over time.
-Props → Pass data between components
-State → Manage changing data
-
-3. What does the useState hook do, and where did you use it in this project?
-
-useState allows a component to store and update data.
-In this project, I used it to manage the selected technologies in my developer stack.
-const [addStack, setAddStack] = useState([]);
-When a user selects a technology, it is added to the stack using the state setter.
-
-4. What does the useEffect hook do, and why did you need it to load the JSON data?
-
-useEffect is used to perform side effects, such as loading data when a component starts.
-
-I used it to load the technology data from the JSON file.
-
-useEffect(() => {
-  fetch("/data.json")
-    .then(res => res.json())
-    .then(data => setTechnologies(data));
-}, []);
-
-The empty dependency array [] means the effect runs when the component loads.
-
-5. Why does every item in a .map() list need a unique key prop?
-
-React uses the key to identify each item in a list.
-
-It helps React efficiently update the correct item when the list changes.
-
-technologies.map(tech => (
-  <TechCard
-    key={tech.id}
-    tech={tech}
-  />
-))
-
-The key should be unique and stable.
-
-6. What is conditional rendering? Show one place you used it.
-
-Conditional rendering means displaying different UI depending on a condition.
-For example, I used it to show a message when no technology has been selected:
-If the stack is empty, the user sees the empty-stack message.
-
-7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
-
-A parent sends data to a child using props.
-<TechCard tech={tech} />
-The child receives the data:
-function TechCard({ tech }) {
-  return <h2>{tech.name}</h2>;
-}
-To send information back to the parent, the parent can pass a function as a prop.
+public/
+└── data.json
