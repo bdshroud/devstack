@@ -14,9 +14,18 @@ const TechnologyCard = ({
   addStuck,
   setAddStuck,
 }: TechnologyCardProps) => {
-  const isSelected = addStuck.some((item) => item.id === tech.id);
+  // Check if this exact technology is already selected
+  const isSelected = addStuck.some(
+    (item) => item.id === tech.id
+  );
+
+  // Check if another technology from the same category is selected
+  const isCategorySelected = addStuck.some(
+    (item) => item.category === tech.category
+  );
 
   const handleSelectedCard = () => {
+    // Same technology already selected
     if (isSelected) {
       toast.warning("This technology is already in your stack.", {
         position: "bottom-right",
@@ -28,6 +37,22 @@ const TechnologyCard = ({
       return;
     }
 
+    // Another technology from the same category is selected
+    if (isCategorySelected) {
+      toast.warning(
+        `You already selected a ${tech.category} technology.`,
+        {
+          position: "bottom-right",
+          autoClose: 1500,
+          theme: "light",
+          transition: Bounce,
+        }
+      );
+
+      return;
+    }
+
+    // Add technology
     toast.success("Stack selected successfully.", {
       position: "bottom-right",
       autoClose: 1000,
@@ -45,7 +70,9 @@ const TechnologyCard = ({
   return (
     <div
       className={`flex h-full w-full flex-col rounded-xl bg-base-100 p-5 shadow-sm transition-all duration-200 hover:shadow-md ${
-        isSelected ? "border-2 border-[#C1239B]" : "border border-transparent"
+        isSelected
+          ? "border-2 border-[#C1239B]"
+          : "border border-transparent"
       }`}
     >
       {/* Top */}
@@ -84,6 +111,7 @@ const TechnologyCard = ({
 
         <span className="ml-auto flex items-center gap-1 text-xs font-medium text-[#475569]">
           {tech.rating}
+
           <img
             src={star}
             alt="Rating"
@@ -97,13 +125,19 @@ const TechnologyCard = ({
         type="button"
         onClick={handleSelectedCard}
         disabled={isSelected}
-        className={`mt-5 flex h-10 w-full items-center justify-center rounded-xl text-sm font-semibold text-white transition-all ${
+        className={`mt-5 flex h-10 w-full items-center justify-center rounded-xl text-sm font-semibold text-white transition-all duration-200 ${
           isSelected
             ? "cursor-not-allowed bg-[#C9CCD5]"
-            : "bg-[#0A0F1D] hover:bg-[#171d2c]"
+            : isCategorySelected
+              ? "bg-[#0A0F1D] hover:-translate-y-0.5 hover:bg-[#171d2c] hover:shadow-md active:translate-y-0"
+              : "bg-[#0A0F1D] hover:-translate-y-0.5 hover:bg-[#171d2c] hover:shadow-md active:translate-y-0"
         }`}
       >
-        {isSelected ? "✓ Added to Stack" : "Add to Stack"}
+        {isSelected
+          ? "✓ Added to Stack"
+          : isCategorySelected
+            ? "Category Selected"
+            : "Add to Stack"}
       </button>
     </div>
   );
