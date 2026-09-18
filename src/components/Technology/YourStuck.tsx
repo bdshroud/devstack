@@ -13,7 +13,6 @@ const YourStuck = ({
   setAddStuck,
 }: YourStuckProps) => {
 
-  // Remove one technology
   const handleRemoveStuck = (stuck: TechnologyType) => {
     const restStuck = addStuck.filter(
       (selectedStuck) => selectedStuck.id !== stuck.id
@@ -24,26 +23,17 @@ const YourStuck = ({
     toast.success(`${stuck.name} removed from your stack.`, {
       position: "bottom-right",
       autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
       theme: "light",
       transition: Bounce,
     });
   };
 
-  // Remove all technologies
   const handleRemoveAll = () => {
     setAddStuck([]);
 
     toast.info("All technologies removed from your stack.", {
       position: "bottom-right",
       autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
       theme: "light",
       transition: Bounce,
     });
@@ -64,12 +54,13 @@ const YourStuck = ({
           {selectedCount === 0
             ? "No technologies selected yet."
             : `${selectedCount} ${
-                selectedCount === 1 ? "Technology" : "Technologies"
+                selectedCount === 1
+                  ? "Technology"
+                  : "Technologies"
               } Selected`}
         </p>
       </div>
 
-      {/* Divider */}
       <div className="my-5 h-px w-full bg-gray-200" />
 
       {/* Empty State */}
@@ -84,7 +75,6 @@ const YourStuck = ({
       {/* Selected Technologies */}
       {selectedCount > 0 && (
         <div className="flex flex-col gap-3">
-
           {addStuck.map((stuck) => (
             <div
               key={stuck.id}
@@ -115,13 +105,12 @@ const YourStuck = ({
                 type="button"
                 aria-label={`Remove ${stuck.name}`}
                 onClick={() => handleRemoveStuck(stuck)}
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-gray-400 transition hover:bg-red-50 hover:text-red-600"
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-gray-400 transition-all duration-200 hover:bg-red-50 hover:text-red-600"
               >
                 <ImCross size={10} />
               </button>
             </div>
           ))}
-
         </div>
       )}
 
@@ -130,12 +119,11 @@ const YourStuck = ({
         <button
           type="button"
           onClick={handleRemoveAll}
-          className="mt-5 h-10 w-full rounded-xl border border-red-200 bg-white text-sm font-medium text-red-600 transition hover:bg-red-50"
+          className="mt-5 h-10 w-full rounded-xl border border-red-200 bg-white text-sm font-medium text-red-600 transition-all duration-200 hover:-translate-y-0.5 hover:bg-red-50 hover:shadow-md"
         >
           Remove All
         </button>
       )}
-
     </div>
   );
 };
