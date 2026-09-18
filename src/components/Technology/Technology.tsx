@@ -13,10 +13,7 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
   const [addStuck, setAddStuck] = useState<TechnologyType[]>([]);
 
   return (
-    <section
-      id="technologies"
-      className="px-4 py-16 lg:py-20"
-    >
+    <section id="technologies" className="px-4 py-16 lg:py-20">
       <div className="mx-auto max-w-[1200px]">
 
         {/* Section Heading */}
@@ -29,11 +26,11 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
           </h2>
 
           <p className="mt-2 text-sm text-[#64748B]">
-            Pick one technology per category to build your ideal stack.
+            Pick technologies to build your ideal stack.
           </p>
         </div>
 
-        {/* Main Content */}
+        {/* Technology + Stack */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
 
           {/* Technology Cards */}
